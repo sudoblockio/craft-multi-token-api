@@ -1,0 +1,14 @@
+[
+  {
+    "name": "blocks",
+    "num_partitions" : 1
+  },
+  {
+    "name": "transactions",
+    "num_partitions" : 24
+  },
+  {
+    "name": "logs",
+    "num_partitions" : 24
+  }
+]

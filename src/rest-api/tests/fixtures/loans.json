@@ -1,0 +1,196 @@
+[
+  {
+    "address" : "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "data" : [
+      "0x3",
+      "0x1b6daabc64ae595a7"
+    ],
+    "indexed" : [
+      "LoanRepaid(Address,Address,Address,int,int)",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3",
+      "cxf000000000000000000000000000000000000000",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3"
+    ],
+    "method": "LoanRepaid",
+    "item_id" : "log_0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa_3",
+    "block_timestamp" : "1618925721900026",
+    "block_number" : 15738823,
+    "block_hash" : "1b04ad9815e7d667355c1606a097b7e775040a9939f704e0da55e43dd30ac209",
+    "transaction_index" : 1,
+    "type" : "log",
+    "log_index" : 3,
+    "item_timestamp" : "2021-04-20T13:35:21Z",
+    "transaction_hash" : "0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa"
+  },
+  {
+    "address" : "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "data" : [
+      "0x3",
+      "0x1b6daabc64ae595a7"
+    ],
+    "indexed" : [
+      "AssetRetired(Address,Address,Address,int,int)",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3",
+      "cxf000000000000000000000000000000000000000",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3"
+    ],
+    "method": "AssetRetired",
+    "item_id" : "log_0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa_3",
+    "block_timestamp" : "1618925721900026",
+    "block_number" : 15738823,
+    "block_hash" : "1b04ad9815e7d667355c1606a097b7e775040a9939f704e0da55e43dd30ac209",
+    "transaction_index" : 1,
+    "type" : "log",
+    "log_index" : 3,
+    "item_timestamp" : "2021-04-20T13:35:21Z",
+    "transaction_hash" : "0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa"
+  },
+  {
+    "address" : "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "data" : [
+      "0x3",
+      "0x1b6daabc64ae595a7"
+    ],
+    "indexed" : [
+      "OriginateLoan(Address,Address,Address,int,int)",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3",
+      "cxf000000000000000000000000000000000000000",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3"
+    ],
+    "method": "OriginateLoan",
+    "item_id" : "log_0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa_3",
+    "block_timestamp" : "1618925721900026",
+    "block_number" : 15738823,
+    "block_hash" : "1b04ad9815e7d667355c1606a097b7e775040a9939f704e0da55e43dd30ac209",
+    "transaction_index" : 1,
+    "type" : "log",
+    "log_index" : 3,
+    "item_timestamp" : "2021-04-20T13:35:21Z",
+    "transaction_hash" : "0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa"
+  },
+  {
+    "address" : "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "data" : [
+      "0x3",
+      "0x1b6daabc64ae595a7"
+    ],
+    "indexed" : [
+      "OriginateLoan(Address,Address,Address,int,int)",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3",
+      "cxf000000000000000000000000000000000000000",
+      "hx1a41f33dc673581ec2491e2405b1bffad0d110d3"
+    ],
+    "method": "OriginateLoan",
+    "item_id" : "log_0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa_3",
+    "block_timestamp" : "1618925721900026",
+    "block_number" : 15738823,
+    "block_hash" : "1b04ad9815e7d667355c1606a097b7e775040a9939f704e0da55e43dd30ac209",
+    "transaction_index" : 1,
+    "type" : "log",
+    "log_index" : 3,
+    "item_timestamp" : "2021-04-20T13:35:21Z",
+    "transaction_hash" : "0x80b7989862ee0115ef247a3d9e4beae187fde00574292516cd31e3cca78b39aa"
+  },
+  {
+    "data": {
+      "method": "withdrawCollateral",
+      "params": {
+        "_value": "0x15af1d78b58c40000"
+      }
+    },
+    "method": "withdrawCollateral",
+    "signature": "kWmeubuI374RsET9PhXVCjeMLlizeHXysgZ8mRYHD5kR2jjuk7N1Wc3yhju8LDCOaP38f0wH4FQCHWaw6iij8AA=",
+    "fee": null,
+    "nid": 3,
+    "block_number": 13696551,
+    "transaction_index": 1,
+    "type": "transaction",
+    "receipt_step_price": "10000000000",
+    "block_timestamp": "1614747187203045",
+    "step_limit": 10000000,
+    "receipt_step_used": 444220,
+    "from_address": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb",
+    "value": 0,
+    "timestamp": "0x5bc9aa0749170",
+    "receipt_status": 1,
+    "item_id": "transaction_0x8ab6c77eb1f91efc9dec36bec8ea4a5f280e8d3630e2aec3bbd243a0e4421cec",
+    "receipt_logs": null,
+    "block_hash": "863946131f03cf0ca69962e49282075953a80e3d90b5eb1c373e0d1bedd90ba9",
+    "to_address": "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "version": "0x3",
+    "nonce": 100,
+    "receipt_cumulative_step_used": 444220,
+    "receipt_score_address": null,
+    "data_type": "call",
+    "item_timestamp": "2021-03-03T04:53:07Z",
+    "hash": "0x8ab6c77eb1f91efc9dec36bec8ea4a5f280e8d3630e2aec3bbd243a0e4421cec"
+  },
+  {
+    "data": {
+      "method": "updateStanding",
+      "params": {
+        "_owner": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+      }
+    },
+    "method": "updateStanding",
+    "signature": "3lzE5m/qEKBfkjQ+bBraIv+IDP34FTwk2AOq4+z4w+1SFMa6gRkJg12v7PuN/3SXKMr1ji6IxM7fALiQX3XM1wA=",
+    "fee": null,
+    "nid": 3,
+    "block_number": 13694805,
+    "transaction_index": 1,
+    "type": "transaction",
+    "receipt_step_price": "10000000000",
+    "block_timestamp": "1614743685222419",
+    "step_limit": 10000000,
+    "receipt_step_used": 253440,
+    "from_address": "hx95bb62ce10924bc26b2ff982df855fdb8c89bb56",
+    "value": 0,
+    "timestamp": "0x5bc99cfac690b",
+    "receipt_status": 1,
+    "item_id": "transaction_0xb4303996e72b89647568b658fe0ecea5be4e21793843ef3872cf1edf3fc0e08d",
+    "receipt_logs": null,
+    "block_hash": "78aadcfcbe264cad167e2cfa56a7a1df2d50fdbd210ce9dde64687a590a52e21",
+    "to_address": "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "version": "0x3",
+    "nonce": 100,
+    "receipt_cumulative_step_used": 253440,
+    "receipt_score_address": null,
+    "data_type": "call",
+    "item_timestamp": "2021-03-03T03:54:45Z",
+    "hash": "0xb4303996e72b89647568b658fe0ecea5be4e21793843ef3872cf1edf3fc0e08d"
+  },
+  {
+    "data": {
+      "method": "updateStanding",
+      "params": {
+        "_owner": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+      }
+    },
+    "method": "updateStanding",
+    "signature": "nes+kdp7EqPAqjlPy6Sr3ly9afIBBC6gFvpDf1+HscgtW2yVEq24P6LNtC6LEXuhxR1k17ZWSEUg1z4uJj9kMAE=",
+    "fee": null,
+    "nid": 3,
+    "block_number": 13694778,
+    "transaction_index": 1,
+    "type": "transaction",
+    "receipt_step_price": "10000000000",
+    "block_timestamp": "1614743631049181",
+    "step_limit": 10000000,
+    "receipt_step_used": 457460,
+    "from_address": "hx95bb62ce10924bc26b2ff982df855fdb8c89bb56",
+    "value": 0,
+    "timestamp": "0x5bc99cc6319fa",
+    "receipt_status": 1,
+    "item_id": "transaction_0x8ac0def1a618b95221cb2283d4510410294ef0edb9db8cb19af789054595a2de",
+    "receipt_logs": null,
+    "block_hash": "c3cb5fbf7284d63b17a83c5939e348c9cf387c48f11e2467a17076a0964e228e",
+    "to_address": "cx66d4d90f5f113eba575bf793570135f9b10cece1",
+    "version": "0x3",
+    "nonce": 100,
+    "receipt_cumulative_step_used": 457460,
+    "receipt_score_address": null,
+    "data_type": "call",
+    "item_timestamp": "2021-03-03T03:53:51Z",
+    "hash": "0x8ac0def1a618b95221cb2283d4510410294ef0edb9db8cb19af789054595a2de"
+  }
+]
