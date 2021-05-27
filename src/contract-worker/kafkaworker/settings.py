@@ -38,7 +38,7 @@ class Settings(BaseSettings):
     CALLER_ADDRESS: str = "hx0"
 
     # Contract addresses
-    LOANS_CONTRACT_ADDRESS: str
+    CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: str
 
     NETWORK_NAME: str = "testnet"  # Manually populate with URL
 
@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     METRICS_ADDRESS: str = ""  # Blank for localhost
 
     class Config:
-        env_prefix = "CRAFT_MULTI_TOKEN_CONTRACT_WORKER_"
+        env_prefix = ""
         case_sensitive = True
 
 

@@ -23,7 +23,7 @@ class Settings(BaseSettings):
 
     class Config:
         case_sensitive = True
-        env_prefix = "CRAFT_MULTI_TOKEN_REST_API_"
+        env_prefix = ""
 
 
 if os.environ.get("ENV_FILE", False):

@@ -10,12 +10,12 @@ func TestEnvironment(t *testing.T) {
 
 	// Set env
 	env_map := map[string]string{
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_TOPICS":       "topics",
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_BROKER_URL":   "broker_url_env",
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_PORT":         "port_env",
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_PREFIX":       "prefix_env",
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_HEALTH_PORT":  "health_port_env",
-		"CRAFT_MULTI_TOKEN_WEBSOCKET_API_METRICS_PORT": "metrics_port_env",
+		"TOPICS":       "topics",
+		"BROKER_URL":   "broker_url_env",
+		"PORT":         "port_env",
+		"PREFIX":       "prefix_env",
+		"HEALTH_PORT":  "health_port_env",
+		"METRICS_PORT": "metrics_port_env",
 	}
 
 	for k, v := range env_map {
@@ -25,22 +25,22 @@ func TestEnvironment(t *testing.T) {
 	// Check env
 	GetEnvironment()
 
-	if Vars.Topics != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_TOPICS"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_TOPICS")
+	if Vars.Topics != env_map["TOPICS"] {
+		t.Errorf("Invalid value for env variable: TOPICS")
 	}
-	if Vars.BrokerURL != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_BROKER_URL"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_BROKER_URL")
+	if Vars.BrokerURL != env_map["BROKER_URL"] {
+		t.Errorf("Invalid value for env variable: BROKER_URL")
 	}
-	if Vars.Port != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_PORT"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_PORT")
+	if Vars.Port != env_map["PORT"] {
+		t.Errorf("Invalid value for env variable: PORT")
 	}
-	if Vars.Prefix != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_PREFIX"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_PREFIX")
+	if Vars.Prefix != env_map["PREFIX"] {
+		t.Errorf("Invalid value for env variable: PREFIX")
 	}
-	if Vars.HealthPort != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_HEALTH_PORT"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_HEALTH_PORT")
+	if Vars.HealthPort != env_map["HEALTH_PORT"] {
+		t.Errorf("Invalid value for env variable: HEALTH_PORT")
 	}
-	if Vars.MetricsPort != env_map["CRAFT_MULTI_TOKEN_WEBSOCKET_API_METRICS_PORT"] {
-		t.Errorf("Invalid value for env variable: CRAFT_MULTI_TOKEN_WEBSOCKET_API_METRICS_PORT")
+	if Vars.MetricsPort != env_map["METRICS_PORT"] {
+		t.Errorf("Invalid value for env variable: METRICS_PORT")
 	}
 }

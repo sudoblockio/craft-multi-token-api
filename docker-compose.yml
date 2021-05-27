@@ -3,44 +3,44 @@ version: '3.7'
 # Enviroment variables for rest-api
 x-rest-api-env: &rest-api-env
   # Prefix
-  CRAFT_MULTI_TOKEN_REST_API_PREFIX: "/api/v1"
+  PREFIX: "/api/v1"
 
   # Mongo
-  CRAFT_MULTI_TOKEN_REST_API_MONGO_SERVER: "mongodb"
-  CRAFT_MULTI_TOKEN_REST_API_MONGO_PORT: 27017
-  CRAFT_MULTI_TOKEN_REST_API_MONGO_USERNAME: "mongo"
-  CRAFT_MULTI_TOKEN_REST_API_MONGO_PASSWORD: "changethis"
+  MONGO_SERVER: "mongodb"
+  MONGO_PORT: 27017
+  MONGO_USERNAME: "mongo"
+  MONGO_PASSWORD: "changethis"
 
   # Metrics
-  CRAFT_MULTI_TOKEN_REST_API_METRICS_PORT: 9401
+  METRICS_PORT: 9401
 
   # Icon
-  CRAFT_MULTI_TOKEN_REST_API_CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
-  CRAFT_MULTI_TOKEN_REST_API_DEX_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
+  CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
+  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
 
   # Enviroment variables for websocket-api
 x-websocket-api-env: &websocket-api-env
   # Prefix and port
-  CRAFT_MULTI_TOKEN_WEBSOCKET_API_PREFIX: "/ws"
-  CRAFT_MULTI_TOKEN_WEBSOCKET_API_PORT: 3000
+  PREFIX: "/ws"
+  PORT: 3000
 
   # Kafka
-  CRAFT_MULTI_TOKEN_WEBSOCKET_API_BROKER_URL: "kafka:9092"
-  CRAFT_MULTI_TOKEN_WEBSOCKET_API_TOPICS: "craft-multi-token-contract"
+  BROKER_URL: "kafka:9092"
+  TOPICS: "craft-multi-token-contract"
 
 # Enviroment variables for contract-workers
 x-worker-env: &worker-env
   # Kafka config
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_KAFKA_SERVER: kafka:9092
+  KAFKA_SERVER: kafka:9092
 
   # Kafka topics
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_TRANSACTIONS_TOPIC: transactions                               # Input
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_LOGS_TOPIC: logs                                               # Input
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_CRAFT_MULTI_TOKEN_CONTRACT_TOPIC: craft-multi-token-contract   # Output
+  TRANSACTIONS_TOPIC: transactions                               # Input
+  LOGS_TOPIC: logs                                               # Input
+  CRAFT_MULTI_TOKEN_CONTRACT_TOPIC: craft-multi-token-contract   # Output
 
   # Icon addresses
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
-  CRAFT_MULTI_TOKEN_CONTRACT_WORKER_CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
+  CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
+  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
 
 services:
   #######
@@ -173,8 +173,8 @@ services:
     depends_on:
       - kafka
     environment:
-      CRAFT_MULTI_TOKEN_CONTRACT_WORKER_LOGGING_LEVEL: DEBUG
-      CRAFT_MULTI_TOKEN_CONTRACT_WORKER_WORKER_MODE: TRANSACTIONS_WORKER
+      LOGGING_LEVEL: DEBUG
+      WORKER_MODE: TRANSACTIONS_WORKER
       <<: *worker-env
 
   logs-contract-worker:
@@ -187,8 +187,8 @@ services:
     depends_on:
       - kafka
     environment:
-      CRAFT_MULTI_TOKEN_CONTRACT_WORKER_LOGGING_LEVEL: DEBUG
-      CRAFT_MULTI_TOKEN_CONTRACT_WORKER_WORKER_MODE: LOGS_WORKER
+      LOGGING_LEVEL: DEBUG
+      WORKER_MODE: LOGS_WORKER
       <<: *worker-env
 
   ###########
