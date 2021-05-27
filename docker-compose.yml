@@ -50,23 +50,12 @@ services:
     image: traefik:${TRAEFIK_TAG:-v2.4}
     container_name: "traefik"
     hostname: "traefik"
-    command:
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.myresolver.acme.email=info@geometrylabs.io"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
     ports:
       - "80:80"
-      - "443:443"
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
+      - "./traefik.yml:/traefik.yml:ro"
 
   ################
   # Admin
@@ -113,11 +102,8 @@ services:
       - "9401:9401"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.rest-api.rule=Host(`balanced.geometry.io`) && PathPrefix(`/api/v1`)"
-      - "traefik.http.routers.rest-api.entrypoints=websecure"
-      - "traefik.http.routers.rest-api.tls=true"
-      - "traefik.http.routers.rest-api.tls.certresolver=myresolver"
-      - "traefik.webservice.frontend.entryPoints=https,wss,http,ws"
+      - "traefik.http.routers.rest-api.rule=PathPrefix(`/api/v1`)"
+      - "traefik.port=80"
     depends_on:
       - mongodb
     environment:
@@ -131,11 +117,8 @@ services:
       - "3000:3000"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.websocket-api.rule=Host(`balanced.geometry.io`) && PathPrefix(`/ws`)"
-      - "traefik.http.routers.websocket-api.entrypoints=websecure"
-      - "traefik.http.routers.websocket-api.tls=true"
-      - "traefik.http.routers.websocket-api.tls.certresolver=myresolver"
-      - "traefik.webservice.frontend.entryPoints=https,wss,http,ws"
+      - "traefik.http.routers.kafka-websocket.rule=PathPrefix(`/ws`)"
+      - "traefik.webservice.frontend.entryPoints=http,ws"
       - "traefik.port=3000"
     depends_on:
       - kafka
