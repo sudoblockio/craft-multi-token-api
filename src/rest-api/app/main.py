@@ -37,7 +37,7 @@ tags_metadata = [
 
 
 app = FastAPI(
-    title="Balanced REST API",
+    title="CraftMultiToken REST API",
     description="...",
     version="v0.1.0",
     openapi_tags=tags_metadata,

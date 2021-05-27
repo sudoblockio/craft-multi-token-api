@@ -50,12 +50,14 @@ services:
     image: traefik:${TRAEFIK_TAG:-v2.4}
     container_name: "traefik"
     hostname: "traefik"
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
-      - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./traefik.yml:/traefik.yml:ro"
 
   ################
   # Admin
@@ -79,16 +81,6 @@ services:
       PORT: 9021
     networks:
       - default
-
-  connect-ui:
-    image: landoop/kafka-connect-ui
-    container_name: connect-ui
-    depends_on:
-      - connect
-    ports:
-      - "8001:8000"
-    environment:
-      - "CONNECT_URL=http://connect:8083"
 
   ###########
   # APIs
@@ -135,8 +127,8 @@ services:
       "-o", "kafka:9092",
       "--period-seconds", "1",
       "--values-as-hex", "True",
-      #"-b", "100",
-      #"-B", "100",
+      "-b", "100",
+      "-B", "100",
       "-p", "https://bicon.net.solidwallet.io/api/v3",
     ]
     volumes:
