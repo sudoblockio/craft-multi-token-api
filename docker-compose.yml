@@ -16,7 +16,7 @@ x-rest-api-env: &rest-api-env
 
   # Icon
   CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
-  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
+  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx9c4698411c6d9a780f605685153431dcda04609f}
 
   # Enviroment variables for websocket-api
 x-websocket-api-env: &websocket-api-env
@@ -40,7 +40,7 @@ x-worker-env: &worker-env
 
   # Icon addresses
   CALLER_ADDRESS: ${CALLER_ADDRESS:-hx33908de1715f15511d4d7503f0fed22e8e60fdc2}
-  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx4c0d460e551cab0aeda64fb90e80fb7ec948c22a}
+  CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS: ${CRAFT_MULTI_TOKEN_CONTRACT_ADDRESS:-cx9c4698411c6d9a780f605685153431dcda04609f}
 
 services:
   #######
@@ -121,15 +121,13 @@ services:
   # ICON Streaming
   ################
   icon-etl:
-    image: geometrylabs/iconetl:${ICON_ETL_TAG:-latest}
+    image: geometrylabs/iconetl:${ICON_ETL_TAG:-v0.1.4-alpha.6}
     command: [
       "stream",
       "-o", "kafka:9092",
       "--period-seconds", "1",
       "--values-as-hex", "True",
-      "-b", "100",
-      "-B", "100",
-      "-p", "https://bicon.net.solidwallet.io/api/v3",
+      "-p", "https://icon.geometry-dev.net/api/v3",
     ]
     volumes:
       - "./icon-etl/last_synced_block.txt:/icon-etl/last_synced_block.txt"
